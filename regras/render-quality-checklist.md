@@ -22,7 +22,7 @@ falha reprova a run inteira e faz o `render.py` **sair com código 1**.
 Overflow tem precedência sobre contagem de selo: um cartão que estoura invalida
 a arte independentemente da marca.
 
-Os números crus ficam registrados em `render-report.json`, não só o veredito.
+Os números crus ficam registrados em `relatorio.json`, não só o veredito.
 Isso permite ver um slide passar de 0 para 3px de folga **antes** de virar falha
 — um cartão que passou raspando hoje é o que estoura na próxima passagem longa.
 
@@ -30,7 +30,8 @@ Isso permite ver um slide passar de 0 para 3px de folga **antes** de virar falha
 
 Roda em `.\executar.ps1 -Acao verificar`, em menos de um segundo:
 
-- 40 testes unitários sobre construtores, auditoria, validação e sincronia;
+- 49 testes unitários sobre construtores, auditoria, validação, sincronia
+  e estrutura de saída;
 - conferência de que `verse-card-v5.html` reflete `verse-card.css`;
 - conferência de que `logo-base64.txt` corresponde ao PNG canônico.
 

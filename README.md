@@ -41,9 +41,9 @@ verse-card-v5/
 
   artes/                        PNGs validados (referência visual, versionados)
   regras/                       regras de marca, qualidade e anti-patterns
-  testes/                       40 testes, rodam sem browser
+  testes/                       49 testes, rodam sem browser
 
-  saida/                        runs geradas — não versionado
+  saida/                        runs geradas (uma pasta por run_id) — não versionado
   .tmp/                         rascunho e intermediários — não versionado
 ```
 
@@ -72,13 +72,16 @@ A pasta de saída vem do `run_id` do próprio conteúdo:
 
 ```text
 saida/2026-09-01-proverbios-19-21-proposito/
-  slides.html                 preview navegável
-  slides-rendered/
-    slide-01-feed.png
-    slide-02-story.png
-    ...
-  render-report.md            auditoria legível
-  render-report.json          mesma auditoria, diffável entre runs
+  preview.html                preview navegável
+  artes/
+    feed/
+      slide-01-feed.png
+      slide-03-feed.png
+      ...
+    story/
+      slide-02-story.png
+  relatorio.md                auditoria legível
+  relatorio.json              mesma auditoria, diffável entre runs
 ```
 
 O render valida a entrada **antes** de escrever qualquer arquivo, confere se o

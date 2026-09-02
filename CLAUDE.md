@@ -49,8 +49,11 @@ Editou o CSS ou o PNG? Rode `-Acao sincronizar`.
 - Entradas ficam em `conteudo/`. Fixtures de exemplo em `conteudo/exemplos/`.
 - A pasta de saída é **derivada do `run_id`**: `saida/<run_id>/`.
   Não passe `--saida` a não ser para experimento fora da convenção.
-- Toda run gera `slides.html`, `slides-rendered/*.png`, `render-report.md`
-  e `render-report.json`.
+- Toda run gera `preview.html`, `artes/<formato>/slide-NN-<formato>.png`,
+  `relatorio.md` e `relatorio.json`.
+- As artes ficam separadas por formato: `artes/feed/` e `artes/story/`.
+  Cada render limpa arte obsoleta da execucao anterior — a pasta sempre
+  reflete exatamente o que o relatorio diz.
 
 ## Arquivos temporários
 
