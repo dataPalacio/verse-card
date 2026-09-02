@@ -1,0 +1,43 @@
+{
+  "run_id": "2026-09-01-isaias-coisa-nova",
+  "handle": "@sua.palavra.diaria",
+  "slides": [
+    {
+      "tipo": "capa",
+      "formato": "feed",
+      "livro": "Isaías",
+      "referencia": "43:18–19",
+      "foto": "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1400&q=80",
+      "foto_alt": "Riacho correndo por um vale verde",
+      "versiculos": [
+        { "n": "18", "linhas": ["“Esqueçam as coisas que já passaram —", "elas não se comparam ao que estou para fazer."] },
+        { "n": "19", "linhas": ["Vou fazer uma coisa nova.", "Ela já está brotando. Vocês não percebem?", "Abrirei um caminho no deserto", "e farei rios na terra seca.”"] }
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "capa",
+      "formato": "story",
+      "livro": "Isaías",
+      "referencia": "43:18–19",
+      "foto": "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1400&q=80",
+      "foto_alt": "Riacho correndo por um vale verde",
+      "versiculos": [
+        { "n": "18", "linhas": ["“Esqueçam as coisas que já passaram —", "elas não se comparam ao que estou para fazer."] },
+        { "n": "19", "linhas": ["Vou fazer uma coisa nova.", "Ela já está brotando. Vocês não percebem?", "Abrirei um caminho no deserto", "e farei rios na terra seca.”"] }
+      ],
+      "hint": "arraste para cima"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "Uma coisa nova",
+      "paragrafos": [
+        "O deserto não era metáfora. Israel estava no exílio, longe de casa, sem sinal de retorno. E a promessa não foi tirar o povo do deserto — foi abrir um caminho dentro dele.",
+        "Deus não prometeu poupar você da travessia. Prometeu ir junto, e abrir o que parecia fechado."
+      ],
+      "marca_dagua": true,
+      "hint": "arraste"
+    }
+  ]
+}

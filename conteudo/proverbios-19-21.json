@@ -1,0 +1,103 @@
+{
+  "run_id": "2026-09-01-proverbios-19-21-proposito",
+  "handle": "@sua.palavra.diaria",
+  "slides": [
+    {
+      "tipo": "capa",
+      "formato": "feed",
+      "livro": "Provérbios",
+      "referencia": "19:21",
+      "foto": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1400&q=85",
+      "foto_alt": "Lago entre montanhas cobertas por névoa",
+      "versiculos": [
+        {
+          "n": "21",
+          "linhas": [
+            "Muitos são os planos no coração do homem,",
+            "mas o que prevalece é o propósito do Senhor."
+          ]
+        }
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "capa",
+      "formato": "story",
+      "livro": "Provérbios",
+      "referencia": "19:21",
+      "foto": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1400&q=85",
+      "foto_alt": "Lago entre montanhas cobertas por névoa",
+      "versiculos": [
+        {
+          "n": "21",
+          "linhas": [
+            "Muitos são os planos no coração do homem,",
+            "mas o que prevalece é o propósito do Senhor."
+          ]
+        }
+      ],
+      "hint": "arraste para cima"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "Há planos demais?",
+      "paragrafos": [
+        "Talvez você tenha desenhado cada passo — e, ainda assim, a vida tomou outra direção.",
+        "Quando os planos mudam, o coração pode chamar isso de atraso. Deus pode estar chamando de cuidado."
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "Planejar é bom",
+      "paragrafos": [
+        "Ter planos não é falta de fé. Planejar é reconhecer os recursos, organizar os passos e agir com sabedoria.",
+        "A questão não é fazer planos. É não transformar os nossos planos no lugar de Deus."
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "O propósito permanece",
+      "paragrafos": [
+        "O propósito do Senhor não é frágil como os nossos calendários. Ele continua de pé, inclusive quando uma porta se fecha.",
+        "Você pode não entender a rota agora. Mas não está fora do alcance da direção de Deus."
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "Quando a rota muda",
+      "paragrafos": [
+        "Nem toda mudança é uma perda. Às vezes, é Deus poupando você de um caminho que parecia certo, mas não era o melhor.",
+        "A fidelidade não está em controlar o mapa. Está em seguir Aquele que conhece o destino."
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "Entregue de novo",
+      "paragrafos": [
+        "Hoje, coloque seus planos diante do Senhor: os que deram certo, os que ainda doem e os que você tem medo de soltar.",
+        "Peça um coração disponível para obedecer, mesmo quando o próximo passo não estiver claro."
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "Uma oração",
+      "paragrafos": [
+        "Senhor, entrego a Ti os planos que fiz. Guia meus passos e alinha meu coração ao Teu propósito.",
+        "Que eu descanse na Tua vontade, porque ela permanece. Amém."
+      ],
+      "marca_dagua": true,
+      "hint": "salve para lembrar"
+    }
+  ]
+}

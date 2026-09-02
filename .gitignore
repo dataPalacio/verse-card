@@ -1,0 +1,19 @@
+# Saída gerada — reproduzível a partir de conteudo/ + template/
+saida/
+
+# Temporários / rascunho
+.tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Ferramentas externas
+.superdesign/
+
+# SO
+Thumbs.db
+desktop.ini

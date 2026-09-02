@@ -1,0 +1,86 @@
+
+:root{
+  --bg-card:#F7F0E6; --bg-outer-a:#E8D5B7; --bg-outer-b:#DCC49F;
+  --terracota:#C47B3A; --marrom-escuro:#2E1A0E; --marrom:#5C3D1E; --marrom-suave:#8B5F47;
+  --hairline:rgba(196,123,58,.28);
+  --logo:url("data:image/png;base64,__LOGO_B64__");
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#DED3C2;display:flex;flex-direction:column;
+  align-items:center;gap:44px;padding:44px}
+h1,h2{font-weight:inherit;font-size:inherit}
+
+/* ============ CANVAS ============ */
+.slide{position:relative;overflow:hidden;box-sizing:border-box;
+  background:linear-gradient(140deg,var(--bg-outer-a) 0%,var(--bg-outer-b) 100%);
+  display:flex;align-items:center;justify-content:center}
+.slide::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 12% 6%,rgba(196,123,58,.20) 0%,transparent 55%)}
+.feed{width:1080px;height:1080px;padding:52px}
+.story{width:1080px;height:1920px;padding:220px 52px 250px} /* safe areas do Instagram */
+
+/* ============ CARTAO ============ */
+.card{position:relative;z-index:2;width:100%;height:100%;background:var(--bg-card);
+  border-radius:44px;padding:56px 58px 40px;display:flex;flex-direction:column;
+  overflow:hidden;box-shadow:0 24px 60px rgba(46,26,14,.14)}
+.story .card{padding:72px 66px 48px;border-radius:52px}
+
+/* ============ REFERENCIA (bloco herói) ============ */
+.ref{display:flex;flex-direction:column;flex-shrink:0}
+.ref-book{font-size:104px;font-weight:900;line-height:.9;letter-spacing:-.035em;
+  color:var(--marrom-escuro);text-transform:uppercase;text-wrap:balance}
+.ref-verse{font-size:62px;font-weight:600;line-height:1;letter-spacing:-.02em;
+  color:var(--terracota);margin-top:8px;font-variant-numeric:tabular-nums}
+/* nomes longos de livro reduzem o corpo automaticamente */
+.ref-book.longo{font-size:76px;line-height:.94}
+.story .ref-book{font-size:132px}
+.story .ref-book.longo{font-size:98px}
+.story .ref-verse{font-size:76px}
+
+/* ============ FOTO ============ */
+.photo{margin:34px 0 30px;width:100%;border-radius:10px;overflow:hidden;
+  background:linear-gradient(120deg,#C9B08A,#A98A5E);
+  flex:1 1 auto;min-height:180px}
+.story .photo{margin:48px 0 42px;min-height:360px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ============ TEXTO BIBLICO ============ */
+.passage{font-family:'Playfair Display',Georgia,serif;font-size:31px;line-height:1.44;
+  color:var(--marrom);flex:0 0 auto;min-width:0;overflow-wrap:break-word}
+.story .passage{font-size:42px;line-height:1.48}
+.passage p + p{margin-top:14px}
+.passage .n{font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:var(--terracota);
+  vertical-align:super;margin-right:6px;font-variant-numeric:tabular-nums}
+.story .passage .n{font-size:21px}
+.passage .cont{padding-left:40px;display:block}
+.story .passage .cont{padding-left:54px}
+
+/* ============ RODAPE + SELO ============ */
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;
+  border-top:1px solid var(--hairline);padding-top:18px;margin-top:28px;flex-shrink:0;
+  font-size:15px;color:var(--marrom-suave);letter-spacing:.08em}
+.story .foot{font-size:21px;padding-top:26px;margin-top:36px}
+.foot .brand{color:var(--marrom);font-weight:600;letter-spacing:.05em}
+.foot .right{display:flex;align-items:center;gap:18px}
+
+/* SELO: extremidade inferior direita, dentro da linha de rodapé.
+   Nunca cruza headline, foto ou corpo de texto — o rodapé é uma faixa reservada. */
+.selo{width:34px;height:34px;flex-shrink:0;background-image:var(--logo);
+  background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.85}
+.story .selo{width:44px;height:44px}
+
+/* marca d’água opcional — apenas em slide de fechamento, atrás do conteúdo */
+/* marca d'água num wrapper que recorta: nunca infla o scrollHeight do cartão */
+.agua-wrap{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;
+  border-radius:inherit}
+.agua-wrap .selo-agua{position:absolute;width:560px;height:560px;right:-150px;bottom:-170px;
+  background-image:var(--logo);background-size:contain;background-repeat:no-repeat;opacity:.05}
+.card > *:not(.agua-wrap){position:relative;z-index:1}
+
+.label{font-size:14px;letter-spacing:.14em;color:#7A5B3A;align-self:flex-start;
+  text-transform:uppercase}
+
+/* corpo dos slides internos (sem foto): texto maior para leitura mobile */
+.passage-interno{font-size:38px;line-height:1.42;margin-top:38px;flex:1 1 auto;min-height:0;
+  display:flex;flex-direction:column;justify-content:center}
+.story .passage-interno{font-size:46px}
