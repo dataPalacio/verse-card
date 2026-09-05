@@ -30,8 +30,8 @@ Isso permite ver um slide passar de 0 para 3px de folga **antes** de virar falha
 
 Roda em `.\executar.ps1 -Acao verificar`, em menos de um segundo:
 
-- 49 testes unitários sobre construtores, auditoria, validação, sincronia
-  e estrutura de saída;
+- 52 testes unitários sobre construtores, auditoria, validação, sincronia,
+  estrutura de saída e incorporação de recursos;
 - conferência de que `verse-card-v5.html` reflete `verse-card.css`;
 - conferência de que `logo-base64.txt` corresponde ao PNG canônico.
 
@@ -48,6 +48,11 @@ Cobre, entre outros: `versiculos[].linhas` vazia (que antes estourava
 ---
 
 ## Conferência humana
+
+Antes das capturas, o render aguarda as fontes e a decodificação das imagens.
+Falhas nessas etapas interrompem a execução: overflow zero, sozinho, não
+garante que foto e tipografia carregaram. Fontes e fotos ficam incorporadas
+no HTML da run para permitir revisão sem internet.
 
 O portão automático garante que a arte é **válida**, não que está **boa**.
 Antes de publicar:

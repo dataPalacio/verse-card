@@ -5,6 +5,12 @@ Complementa o `README.md` (o que é e como usar) e `regras/` (regras de arte).
 
 ---
 
+## Pesquisa bíblica obrigatória
+
+Usar exclusivamente NTLH em pesquisas, leitura de contexto e citações bíblicas.
+Ler e aplicar `regras/pesquisa-biblica.md` antes de produzir ou revisar conteúdo.
+Não substituir por outra tradução quando a fonte NTLH estiver indisponível.
+
 ## Idioma
 
 Documentação, nomes de pasta e identificadores em **pt-BR**. Não traduzir

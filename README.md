@@ -8,6 +8,13 @@ Formatos suportados: **feed 1080×1080** e **story 1080×1920**.
 
 ---
 
+## Tradução bíblica
+
+Toda pesquisa e citação deve usar exclusivamente a **NTLH**. Conferir a versão
+e a redação na fonte e registrar o link na nota editorial. Regra completa em
+[regras/pesquisa-biblica.md](regras/pesquisa-biblica.md). Exemplos anteriores
+são históricos; suas citações precisam ser conferidas em NTLH antes de reutilização.
+
 ## Estrutura
 
 ```text
@@ -25,6 +32,7 @@ verse-card-v5/
 
   pipeline/                     CÓDIGO
     render.py                   orquestração + Playwright
+    recursos.py                 incorpora fontes e fotos no preview
     construtores.py             funções puras de HTML
     validacao.py                validação com mensagens em pt-BR
     validar.py                  valida sem renderizar
@@ -41,7 +49,7 @@ verse-card-v5/
 
   artes/                        PNGs validados (referência visual, versionados)
   regras/                       regras de marca, qualidade e anti-patterns
-  testes/                       49 testes, rodam sem browser
+  testes/                       52 testes, rodam sem browser
 
   saida/                        runs geradas (uma pasta por run_id) — não versionado
   .tmp/                         rascunho e intermediários — não versionado
@@ -87,6 +95,27 @@ saida/2026-09-01-proverbios-19-21-proposito/
 O render valida a entrada **antes** de escrever qualquer arquivo, confere se o
 template está em sincronia com o CSS, e **sai com código 1** se algum slide
 reprovar por overflow ou por contagem de selo.
+
+Fontes e fotos HTTPS são baixadas pelo Python (respeitando o proxy do ambiente)
+e incorporadas ao `preview.html`. As fotos externas precisam ser JPEG, PNG ou
+WebP. O HTML entregue abre sem internet. Os downloads ficam em `.tmp/recursos/`;
+remova esse cache para atualizar um recurso remoto que mudou mantendo a URL.
+A primeira execução precisa de acesso às fontes e fotos. Falhas de download,
+decodificação de imagem ou carregamento das fontes interrompem a execução.
+
+## Piloto editorial em revisão
+
+Tema 01: **Confiar durante a espera**, seis slides de feed, capa em Salmo 27:14
+(NTLH) e reflexão contextual em Salmo 27. Execute:
+
+```powershell
+.\executar.ps1 -Acao render -Conteudo conteudo/salmo-27-espera.json
+```
+
+O texto da legenda está em `conteudo/salmo-27-espera-legenda.md`. Os dez temas
+aprovados e a sequência de validação estão em `conteudo/temas-aprovados.md`.
+Neste piloto, a legenda é produzida editorialmente após a revisão das artes;
+o renderizador ainda não gera ou copia legendas automaticamente.
 
 ## Outros comandos
 

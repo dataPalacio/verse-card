@@ -31,6 +31,7 @@ from pathlib import Path
 from pipeline.auditoria import avalia_slide, resumo
 from pipeline.construtores import render_slide
 from pipeline.validacao import ErroDeConteudo, valida_conteudo
+from pipeline.recursos import incorporar
 
 RAIZ = Path(__file__).resolve().parent.parent
 
@@ -117,17 +118,19 @@ def main():
         sys.exit(2)
 
     saida = Path(args.saida) if args.saida else RAIZ / "saida" / conteudo["run_id"]
+    # Resolva os recursos antes de substituir uma run anterior.
+    documento = incorporar(monta_documento(conteudo))
     prepara_saida(saida, conteudo["slides"])
 
     preview = saida / "preview.html"
-    preview.write_text(monta_documento(conteudo), encoding="utf-8")
+    preview.write_text(documento, encoding="utf-8")
     print(f"preview: {preview}")
 
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
-        print("playwright ausente - apenas o preview HTML foi gerado.")
-        return
+        print("playwright ausente - apenas o preview HTML foi gerado.", file=sys.stderr)
+        sys.exit(1)
 
     linhas = []
     with sync_playwright() as p:
@@ -135,7 +138,15 @@ def main():
         pg = b.new_page(viewport={"width": 1200, "height": 900}, device_scale_factor=1)
         pg.goto(preview.resolve().as_uri())
         pg.wait_for_load_state("networkidle")
-        pg.wait_for_timeout(2500)
+        pg.evaluate("""async () => {
+            await document.fonts.ready;
+            await Promise.all([...document.images].map(img => img.decode()));
+            for (const [peso, familia] of [['900', 'Inter'], ['400', 'Playfair Display']]) {
+                const carregadas = await document.fonts.load(`${peso} 38px "${familia}"`);
+                if (!carregadas.length || carregadas.some(f => f.status !== 'loaded'))
+                    throw new Error(`Fonte nao carregada: ${familia}`);
+            }
+        }""")
 
         # auditoria de overflow - regra do render-quality-checklist
         medidas = pg.evaluate("""() => [...document.querySelectorAll('.slide')].map(s => {

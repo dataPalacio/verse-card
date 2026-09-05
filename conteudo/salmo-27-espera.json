@@ -1,0 +1,76 @@
+{
+  "run_id": "2026-09-05-salmo-27-confiar-na-espera",
+  "handle": "@sua.palavra.diaria",
+  "slides": [
+    {
+      "tipo": "capa",
+      "formato": "feed",
+      "livro": "Salmos",
+      "referencia": "27:14 · NTLH",
+      "foto": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1400&q=85",
+      "foto_alt": "Lago tranquilo entre montanhas, com uma pequena casa à margem e o céu refletido na água",
+      "versiculos": [
+        {
+          "n": "14",
+          "linhas": [
+            "Confie no Senhor.",
+            "Tenha fé e coragem.",
+            "Confie em Deus, o Senhor."
+          ]
+        }
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "A resposta ainda não veio?",
+      "paragrafos": [
+        "Você ora, faz a sua parte e continua sem saber quando as coisas vão mudar. A espera cansa, sobretudo quando não há prazo.",
+        "Como viver este dia sem deixar que a preocupação com o amanhã ocupe todo o seu coração?"
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "A fé também pede ajuda",
+      "paragrafos": [
+        "No Salmo 27, a confiança em Deus aparece junto de pedidos por socorro e direção. O salmista conhece o medo e leva sua aflição ao Senhor.",
+        "Você também pode orar com sinceridade. Não precisa esconder o cansaço para se aproximar de Deus."
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "Coragem para hoje",
+      "paragrafos": [
+        "O salmo termina com um convite à confiança e à coragem. Ele não oferece uma data para o fim da dificuldade.",
+        "Confiar em Deus nos ajuda a atravessar o presente, mesmo sem conhecer o próximo capítulo. Há espaço para esperança em um dia ainda difícil."
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "Qual é o passo de hoje?",
+      "paragrafos": [
+        "Dê nome ao que preocupa você e apresente isso a Deus em oração. Depois, reconheça o que está ao seu alcance neste dia.",
+        "Cumpra uma responsabilidade, procure uma pessoa de confiança ou reserve tempo para descansar. Você pode esperar e continuar cuidando da vida."
+      ],
+      "hint": "arraste"
+    },
+    {
+      "tipo": "interno",
+      "formato": "feed",
+      "titulo": "Uma oração na espera",
+      "paragrafos": [
+        "Senhor, Tu conheces o que espero e o quanto isso pesa em mim. Recebe minhas preocupações e fortalece meu coração.",
+        "Dá-me coragem para viver este dia, sabedoria para agir e humildade para pedir ajuda. Ensina-me a confiar em Ti durante a espera. Amém."
+      ],
+      "marca_dagua": true,
+      "hint": "salve para lembrar"
+    }
+  ]
+}

@@ -50,6 +50,11 @@ h1,h2{font-weight:inherit;font-size:inherit}
 .story .ref-book.longo{font-size:98px}
 .story .ref-verse{font-size:76px}
 
+/* Títulos editoriais precisam de espaço para acentos entre as linhas.
+   A largura limitada evita títulos longos espremidos em uma única linha. */
+.feed h2.ref-book.longo{font-size:68px;line-height:1.16;
+  letter-spacing:-.015em;max-width:740px}
+
 /* ============ FOTO ============ */
 .photo{margin:34px 0 30px;width:100%;border-radius:10px;overflow:hidden;
   background:linear-gradient(120deg,#C9B08A,#A98A5E);
