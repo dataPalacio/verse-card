@@ -10,7 +10,7 @@
 
 .EXAMPLE
     .\executar.ps1 -Acao preparar
-    .\executar.ps1 -Acao render -Conteudo conteudo/proverbios-19-21.json
+    .\executar.ps1 -Acao render -Conteudo conteudos/publicados/001-confiar-na-espera/conteudo.json
     .\executar.ps1 -Acao verificar
 #>
 [CmdletBinding()]
@@ -59,7 +59,7 @@ function Invoke-Py {
 
 function Resolve-Conteudo {
     if (-not $Conteudo) {
-        throw "Informe o conteudo: .\executar.ps1 -Acao $Acao -Conteudo conteudo/<arquivo>.json"
+        throw "Informe o conteudo: .\executar.ps1 -Acao $Acao -Conteudo conteudos/publicados/<numero-tema>/conteudo.json"
     }
     if (-not (Test-Path $Conteudo)) {
         throw "Conteudo nao encontrado: $Conteudo"
@@ -71,37 +71,37 @@ switch ($Acao) {
 
     'preparar' {
         Write-Host "Python $($py.Versao) via '$($py.Exe) $($py.Args)'"
-        Invoke-Py @('-m', 'pip', 'install', '-r', 'requirements.txt') 'Instalacao das dependencias'
+        Invoke-Py @('-m', 'pip', 'install', '-r', 'sistema/requirements.txt') 'Instalacao das dependencias'
         Invoke-Py @('-m', 'playwright', 'install', 'chromium') 'Download do Chromium'
         Write-Host "`nAmbiente pronto."
     }
 
     'validar' {
         $c = Resolve-Conteudo
-        Invoke-Py @('-m', 'pipeline.validar', $c) 'Validacao'
+        Invoke-Py @('-m', 'sistema.pipeline.validar', $c) 'Validacao'
     }
 
     'sincronizar' {
-        Invoke-Py @('-m', 'pipeline.sincroniza_template') 'Sincronizacao'
+        Invoke-Py @('-m', 'sistema.pipeline.sincroniza_template') 'Sincronizacao'
     }
 
     'testar' {
-        Invoke-Py @('-m', 'pytest', 'testes', '-q') 'Testes'
+        Invoke-Py @('-m', 'pytest', 'sistema/testes', '-q') 'Testes'
     }
 
     'verificar' {
         # Portao rapido: nao abre browser, nao gera arte.
-        Invoke-Py @('-m', 'pytest', 'testes', '-q') 'Testes'
-        Invoke-Py @('-m', 'pipeline.sincroniza_template', '--conferir') 'Conferencia de sincronia'
+        Invoke-Py @('-m', 'pytest', 'sistema/testes', '-q') 'Testes'
+        Invoke-Py @('-m', 'sistema.pipeline.sincroniza_template', '--conferir') 'Conferencia de sincronia'
         Write-Host "`nVerificacao concluida com sucesso."
     }
 
     'render' {
         $c = Resolve-Conteudo
         # Ordem obrigatoria: validar e conferir template ANTES de gerar arte.
-        Invoke-Py @('-m', 'pipeline.validar', $c) 'Validacao'
-        Invoke-Py @('-m', 'pipeline.sincroniza_template', '--conferir') 'Conferencia de sincronia'
-        $args = @('-m', 'pipeline.render', $c)
+        Invoke-Py @('-m', 'sistema.pipeline.validar', $c) 'Validacao'
+        Invoke-Py @('-m', 'sistema.pipeline.sincroniza_template', '--conferir') 'Conferencia de sincronia'
+        $args = @('-m', 'sistema.pipeline.render', $c)
         if ($Saida) { $args += @('--saida', $Saida) }
         Invoke-Py $args 'Render'
     }

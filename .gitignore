@@ -1,4 +1,5 @@
-# Saída gerada — reproduzível a partir de conteudo/ + template/
+# Arquivos gerados para postagem
+conteudos/publicados/*/publicacao/
 saida/
 
 # Temporários / rascunho
